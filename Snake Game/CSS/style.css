@@ -1,0 +1,150 @@
+*{
+    padding: 0;
+    margin: 0;
+    background-color: #50B498;
+}
+
+.body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+#scoreBox{
+    position: absolute;
+    top: 9vmin;
+    right: 20vmin;
+    font-size: 7vmin;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+#hiscore{
+    position: absolute;
+    top: 19vmin;
+    right: 4vmin;
+    font-size: 7vmin;
+    font-weight: bold; 
+    background-color: transparent;
+}
+
+@media screen and (min-width: 410px){
+    #scoreBox{
+        top: 1vmin;
+    }
+    #hiscore{
+        top: 9vmin;
+    }
+}
+
+@media screen and (min-width: 560px){
+    #hiscore{
+        font-size: 5vmin;
+        top: 7vmin;
+    }
+    #scoreBox{
+        right: 16vmin;
+        font-size: 5vmin;
+    }
+    
+}
+
+@media screen and (min-width: 700px){
+    #hiscore{
+        right:11vmin;
+    }
+     #scoreBox{ 
+      right: 22vmin;
+    }
+    
+}
+
+#board{
+    background: linear-gradient(#DEF9C4,rgb(147, 234, 147));
+    width: 90vmin;
+    height: 92vmin;
+    border: 2px solid black;
+    display: grid;
+    grid-template-rows: repeat(18,1fr);
+    grid-template-columns: repeat(18,1fr);
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 470px){
+    #board{
+        width: 71vmin;
+        height: 74vmin
+    }
+}
+
+.head {
+    background: linear-gradient(135deg, #4FC3A1, #2E8B57); 
+    border: .4vmin solid #2E7D32; 
+    border-radius: 5px;
+    position: relative;  /* Make the head a relative container for absolute positioned elements */
+}
+
+.eye {
+    position: absolute;
+    height: 6px; 
+    width: 6px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.eye.left {
+    top: 3px; 
+    left: 2px; 
+}
+
+.eye.right {
+    top: 3px;
+    right: 2px; 
+}
+
+.eye::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    height: 2px;
+    width: 2px;
+    background-color: white; /* White dot for eye glint */
+    border-radius: 50%;
+}
+
+
+
+.snake {
+    background: linear-gradient(135deg, #9CDBA6, #469e85); 
+    border: .25vmin solid #0a8383;
+    border-radius: 5px;
+}
+
+.food {
+    background: linear-gradient(135deg, #FFA07A, #FF6347); 
+    border: .3vmin solid #FF4500; 
+    border-radius: 40%;
+}
+.start{
+    position: absolute;
+    font-weight: bold;
+    bottom: 7%;
+}
+
+.hidden{
+    display: none;
+}
+
+.gameOver{
+    position: absolute;
+    text-align: center;
+    font-size: 10vmin;
+    display: none;
+}
